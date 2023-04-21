@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <title> Cats </title>
+        <meta charset="utf-8">
+        <link rel="icon" href = "images/cat.jpg" type="image/jpg">
+        <link rel="stylesheet" href="indexStyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div id="menu">
+           
+            <a href="index.html">Home</a>
+            <a href="product.html">Product</a>
+            <a class="signIn" href="">Sign-in</a>
+            <a href="">About Us</a>
+            <a href="index.html#S1">Section1</a>
+            <a href="product.html#S2">Section2</a>
+            
+        </div>
+
+        <div class="divContainer">
+            <div class="divGroup">
+                1 Test
+            </div>
+            <div class="divGroup">
+                2 Test
+            </div>
+            <div class="divGroup">
+                3 Test
+            </div>
+        </div>
+
+        <div id="bodyDiv">
+        <h1> HEADER H1 WRITE TITLE HERE</h1>
+        <h2> H2-HEADER </h2>
+        <h6> H6-HEADER </h6>
+        <p> Link: <a href="https://www.google.com" target="_blank" rel="noreferrer noopener">Google</a> </p>
+        <iframe width="500" height="300" src="https://www.youtube.com/embed/1Rs2ND1ryYc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <a name="S1"></a>
+        <p>
+            Kedinizin Adını Giriniz: 
+            <form>
+                <label>Kedi İsmi: </label>
+                <input type="text" placeholder="Kedi ismi giriniz" required>
+                <!-- <button type="button">SUBMIT</button> -->
+                <input type="submit" value="Submit" onclick="">
+            </form>
+        </p>
+
+        <table>
+            <tr>
+              <td>
+                  <p>
+                  <a href="product.html" target="_blank" rel="noreferrer noopener">
+                      <img src="images/catfood1.jpg" alt="Cat Picture" width="200px">
+                    </a>
+                    </p>
+                    <p>Cat Food Plus X</p>
+                    
+                </td>
+              <td><img src="images/catfood2.jpg" alt="Cat Picture" >2</td>
+              <td><img src="images/catfood1.jpg" alt="Cat Picture" >3</td>
+            </tr>
+            <tr>
+              <td><img src="images/catfood1.jpg" alt="Cat Picture" >4</td>
+              <td><img src="images/catfood1.jpg" alt="Cat Picture" >5</td>
+              <td><img src="images/catfood1.jpg" alt="Cat Picture" >6</td>
+            </tr>
+          </table> 
+
+        <!-- Comments Here -->
+        <!--<img src="https://picsum.photos/4000/3000">-->
+        <img src="images/cat2.jpg" alt="Cat Picture" width="600px">
+        <img src="https://picsum.photos/500/400">
+        <img src="https://picsum.photos/500/400">
+        <div id="divId1">
+            <p id="p1">
+                AAAA&nbsp;&nbsp;&nbsp;&nbsp;BBBB
+                CC CCC DDD DDEEEEEEFFFFF
+            </p>
+        </div>
+        <a name="S2"></a>
+        <p class="c2"> Lorem ipsum dolor sit amet,    <br> consectetur adipiscing elit. Aliquam condimentum orci vitae maximus viverra. In lacinia ipsum ut feugiat laoreet. Donec finibus ligula ut felis euismod ornare. Etiam vehicula lectus nec euismod consequat. Curabitur lacinia, felis ut convallis scelerisque, dui risus dapibus arcu, eu sollicitudin orci arcu et tortor. Sed tempus finibus tellus ut consectetur. Sed mattis elit posuere efficitur convallis. Suspendisse non scelerisque nisi. Duis laoreet augue turpis, vitae hendrerit elit aliquam vitae.  </p>
+        <p class="c2"> Aliquam id neque varius, vulputate lorem eu, pellentesque lorem. Donec blandit viverra sem, vitae vulputate erat convallis vel. Maecenas congue vehicula semper. Etiam non hendrerit ante, sed pellentesque est. Etiam suscipit luctus libero. Duis viverra tortor nec elit ultrices lacinia. Vivamus orci nibh, efficitur a ante malesuada, ullamcorper viverra massa. Nullam tempor hendrerit magna vitae congue. </p>   
+        <p> In vulputate odio eget ipsum tempus porttitor. Morbi laoreet risus at magna pretium pellentesque. Duis a mi eget dolor egestas sollicitudin. Phasellus congue orci velit, et dictum odio tristique in. Sed vehicula tempor mauris, feugiat sollicitudin magna accumsan nec. Phasellus malesuada non ante eu ullamcorper. Morbi dignissim neque at iaculis consequat. Donec commodo sapien finibus, semper lacus ut, ullamcorper lacus. Phasellus accumsan venenatis pretium. Cras tortor nunc, sollicitudin congue felis ac, interdum dapibus est. Nam cursus erat eget rutrum volutpat. Duis eu ultrices velit. Vestibulum turpis nisi, fermentum a magna at, hendrerit tristique ante. </p> 
+        </div>
+
+        <script>
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+              if (prevScrollpos > currentScrollPos) {
+                document.getElementById("menu").style.top = "0";
+              } else {
+                document.getElementById("menu").style.top = "-50px";
+              }
+              prevScrollpos = currentScrollPos;
+            }
+            </script>
+    </body>
+
+</html>

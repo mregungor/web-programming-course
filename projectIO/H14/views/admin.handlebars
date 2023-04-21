@@ -1,0 +1,21 @@
+<div class="main">
+    
+    <h1>ADMIN </h1>
+    <p> Welcome - {{usersObj.username}} - </p>
+    <p> Welcome - {{usersObj.password}} - </p>
+    <p> mail - {{usersObj.email}} - </p>
+    <p> registration Date: - {{usersObj.regDate}} - </p>
+
+<form action="" method="POST">
+        <button name="foo" value="send">Send</button>
+    </form>
+
+    <table>
+    {{#each allusers}}
+        <tr>{{name}}</tr>
+    {{/each}}
+    </table>
+    <h2>TEST</h2>
+    
+</div>
+

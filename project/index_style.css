@@ -1,0 +1,117 @@
+.menu ul
+{
+    background-color: azure;
+    list-style: none;
+    /*padding: 0;*/
+    padding: 0;
+    padding-bottom: 20px;
+    height: 4vh;
+}
+.menu ul li
+{
+    float: left;
+    padding-left: 10px;
+    padding-top: 5px;
+    background-color: aquamarine;
+    margin: 1px;
+    border-right: solid;
+}
+.menu ul li:hover
+{
+    background-color: rgb(43, 83, 70);
+}
+.menu ul li a
+{
+    text-decoration-line:none;
+}
+.menu ul li a:hover
+{
+    /*color:rgba(175, 235, 216, 0);*/
+    color:rgb(175, 235, 216)
+}
+
+
+#signIn
+{
+    padding-right: 10px;
+    float:right;
+}
+
+
+body{
+    /*background-image: url("images/cat.jpg");*/
+    background-color: #cac7dd;
+}
+h1{
+    /*font-family: "Times New Roman", Times, serif !important;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    clear: left;
+
+}
+table td{
+    border-style: solid;
+    border-width: 2px;
+}
+
+table td img{
+    width: 25vw;
+}
+.product_table img:hover
+{
+    /*width: 35vw;*/
+    transform: scale(1.5);
+    border-style: solid;
+    border-width: 2px;
+    /*Ref: https://www.trendyol.com/ev-urunlerinde-2--urune-ozel-indirimler/butikdetay/599837 css file
+    .boutique-product:hover .p-card-img {
+    transform: scale(1.03);
+    }   */
+}
+
+.main-container
+{
+    max-width: 960px;
+    /*margin:auto;*/
+    margin-left: 2vw;
+    margin-right: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.class1
+{
+    background-color: blueviolet;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*
+    height: 300px;
+    width: 200px;
+    width: 200px;
+    margin: 43px 20px 10px 5px;
+    height: 300px;
+    */
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    /*padding: 5px;*/
+    width: 20%;
+    /*float: left;*/
+    /*display: flex;*/
+}
+
+.class2
+{
+    background-color: rgb(120, 248, 15);
+    width: 20%;
+    /*float: left;*/
+    /*display: flex;*/
+}
+.class3
+{
+    background-color: rgb(226, 43, 43);
+    width: 20%;
+    /*float: left;*/
+    /*display: flex;*/
+}

@@ -1,0 +1,29 @@
+<div class="main">
+    
+    <h1>ADMIN </h1>
+    <p> Welcome - {{usersObj.username}} - </p>
+    <p> mail - {{usersObj.email}} - </p>
+    <p> registration Date: - {{usersObj.regDate}} - </p>
+
+    <form action="" method="POST">
+        <button name="foo" value="send">Send</button>
+    </form>
+
+    {{#if usersObj.allusers}}
+    <h2>ALL USERS</h2>
+    <table>
+        <tr>
+            <th style="border: 1px solid black">UserName</th>
+            <th style="border: 1px solid black">Email</th>
+        </tr>
+        {{#each usersObj.allusers}}
+            <tr> 
+                <td style="border: 1px solid black">{{username}}</th>
+                <td style="border: 1px solid black">{{email}}</th>
+            </tr>
+        {{/each}}
+    </table>
+    {{/if}}
+    
+</div>
+

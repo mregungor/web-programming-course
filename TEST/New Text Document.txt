@@ -1,0 +1,83 @@
+2.öğretimdeki derste konuştuğumuz bir admin sayfasında buton ile hem kullanıcı (yani admin) bilgilerini hemde bütün kullanıcıları almak istersek nasıl yapabiliriz sorusunu aşağıdaki gibi cevaplayabiliriz.
+Projesini yapan arkadaşlarımız için bir yol göstermesi amacıyla burada paylaşıyorum. Derste nasıl yaptığımızı ve ayrıntılarını konuşabiliriz haftaya.
+
+Öncelikle bir nesne oluşturarak kullanıcı verilerini ve sorgudan elde ettiğimiz verileri burada kaydedebiliriz.
+
+ilk öncelikle giriş yapıldığı hali (get ile aldığımız)
+    app.get('/admin/:uname', function(req,res){
+        //console.log(req.params.uname);
+        
+        User.findOne({username: req.session.username}, 
+            function(err, user){
+                if(err) throw err;
+                res.render('admin', {usersObj: user});
+            }
+        ).lean();
+    
+        //res.render('admin');
+    });
+
+
+View kısmında tanımladığımız butona atadığımız genel özelliği
+form ile aldığımızdan post methodu çağırıldığı zaman aşağıdaki gibi işleyebiliriz.
+
+    app.post('/admin/:uname', function(req,res){
+        console.log("admin post");
+
+        
+        let data={};
+        data.username = req.session.username;
+        data.email = req.session.email;
+        data.regDate = req.session.regdate;
+        data.id = req.session.id ;
+        data.authLvl=req.session.authLvl;
+        data.allusers=[];
+
+        var query= User.find({}).lean();
+        var results=query.exec(function(err,allusers){
+            if(err){ console.log('error'); throw err;}
+            for(let i=0; i<allusers.length; i++)
+            {
+                data.allusers.push(allusers[i]);
+            }
+
+            res.render('admin', {usersObj: data});
+        });
+
+    });
+
+Elbetteki bu seçeneklerden sadece biri ve sadece tek buton olduğundan
+bu buton davranışı bütün kullanıcıları çekerek tablo halinde view'de yazdırmak olacak. Eğer daha fazla özellik eklemek isterseniz admin kısmına
+bunu radyo butonları veya seçilebilir listelerle alabilir ve işleyebilirsiniz.
+
+Viewde admin sayfası için yazdığımız kod
+
+<div class="main">
+    
+    <h1>ADMIN </h1>
+    <p> Welcome - {{usersObj.username}} - </p>
+    <p> mail - {{usersObj.email}} - </p>
+    <p> registration Date: - {{usersObj.regDate}} - </p>
+
+    <form action="" method="POST">
+        <button name="foo" value="send">Send</button>
+    </form>
+
+    {{#if usersObj.allusers}}
+    <h2>ALL USERS</h2>
+    <table>
+        <tr>
+            <th style="border: 1px solid black">UserName</th>
+            <th style="border: 1px solid black">Email</th>
+        </tr>
+        {{#each usersObj.allusers}}
+            <tr> 
+                <td style="border: 1px solid black">{{username}}</th>
+                <td style="border: 1px solid black">{{email}}</th>
+            </tr>
+        {{/each}}
+    </table>
+    {{/if}}
+    
+</div>
+
